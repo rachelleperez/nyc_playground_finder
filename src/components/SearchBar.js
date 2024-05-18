@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
 const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
+  const [zipError, setZipError] = useState("");
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+
+    if (name === "zipcode") {
+      if (!/^\d{0,5}$/.test(value)) {
+        setZipError("ZIP code must be 5 digits.");
+        return;
+      } else {
+        setZipError("");
+      }
+    }
+
     setCriteria((prev) => ({
       ...prev,
       [name]: value,
@@ -11,6 +23,12 @@ const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (criteria.zipcode && criteria.zipcode.length !== 5) {
+      setZipError("ZIP code must be exactly 5 digits.");
+      return;
+    }
+
     fetchPlayground(criteria);
   };
 
@@ -35,6 +53,7 @@ const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
         value={criteria.zipcode || ""}
         onChange={handleInputChange}
       />
+      {zipError && <p style={{ color: "red" }}>{zipError}</p>}
       <button type="submit">Search</button>
     </form>
   );
