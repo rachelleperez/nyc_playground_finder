@@ -11,14 +11,14 @@ const ParkDetailsPage = () => {
   console.log("------ Reached Park Details Page ---------");
   console.log("Playground Data in ParkDetailsPage: ", playground);
 
-  if (!playground || !playground.name311) {
+  if (!playground || !playground.name) {
     return (
       <p>Playground details not available. Please go back and try again.</p>
     );
   }
 
   const {
-    name311,
+    name,
     displayAddress,
     imageUrl,
     boroughName,
@@ -30,10 +30,10 @@ const ParkDetailsPage = () => {
   return (
     <div className="park-details-page">
       <h1>Playground Details</h1>
-      <h2>{name311}</h2>
+      <h2>{name}</h2>
       <img
         src={imageUrl}
-        alt={name311}
+        alt={name}
         onError={(e) => {
           e.target.onerror = null; // Prevent infinite loop if placeholder fails
           e.target.src = "https://via.placeholder.com/300";
