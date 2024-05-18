@@ -59,7 +59,7 @@ const ParkDetailsPage = () => {
       </button>
 
       <h3>Map</h3>
-      <MapComponent latitude={latitude} longitude={longitude} />
+      <MapComponent latitude={latitude} longitude={longitude} name={name} />
 
       <h3>Current Weather</h3>
       <WeatherWidget latitude={latitude} longitude={longitude} />
