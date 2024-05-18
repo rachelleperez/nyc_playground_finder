@@ -1,4 +1,4 @@
-This is a placehoderholder for this project's README documentation
+This is a placeholder for this project's README documentation
 
 ## Project Title
 
