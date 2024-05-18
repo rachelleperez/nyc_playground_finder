@@ -83,11 +83,15 @@ const MainPage = () => {
           setPopupMessage(popupMessages.noResultsZipcode);
         }
         setShowPopup(true);
+        // Update criteria to set Borough to 'Any' and clear zipcode
+        setCriteria({ borough: "Any", zipcode: "" });
       }
     } catch (error) {
       console.error("Error fetching playground data:", error);
       setPopupMessage("An error occurred while fetching playground data.");
       setShowPopup(true);
+      // Update criteria to set Borough to 'Any' and clear zipcode
+      setCriteria({ borough: "Any", zipcode: "" });
     }
     setLoading(false);
   };
@@ -108,7 +112,11 @@ const MainPage = () => {
   return (
     <div className="main-page">
       <h1>NYC Playground Finder</h1>
-      <SearchBar setCriteria={setCriteria} fetchPlayground={fetchPlayground} />
+      <SearchBar
+        criteria={criteria}
+        setCriteria={setCriteria}
+        fetchPlayground={fetchPlayground}
+      />
       {loading && <Preloader />}
       {playground && (
         <div>
