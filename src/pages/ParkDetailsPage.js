@@ -35,7 +35,7 @@ const ParkDetailsPage = () => {
 
   return (
     <div className="park-details-page">
-      <Header currentPage="ParkDetails" />
+      <Header currentPage="About" />
       <h1>Playground Details</h1>
       <h2>{name}</h2>
       <img
