@@ -50,7 +50,7 @@ const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
       <p>Enter a 5-digit Zip Code</p>
       <div style={{ display: "flex", alignItems: "center" }}>
         <img
-          src="/images/searchIcon.svg"
+          src="/images/Search.svg"
           alt="Search Icon"
           style={{ marginRight: "8px" }}
         />
