@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Main from "../components/Main/Main";
 import PlaygroundCard from "../components/PaygroundCard/PlaygroundCard";
 import SearchBar from "../components/SearchBar/SearchBar";
 import Preloader from "../components/Preloader/Preloader";
@@ -111,6 +112,7 @@ const Home = () => {
 
   const closePopup = () => {
     setShowPopup(false);
+    setCriteria({ borough: "Any", zipcode: "" }); // as this criteria is ignored, reset
   };
 
   const getRandomBorough = () => {
@@ -128,36 +130,36 @@ const Home = () => {
   };
 
   return (
-    <div className="main-page">
-      <Header currentPage="Home" />
-      <h1>NYC Playground Finder</h1>
-      <h2>This is a subtitle</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-        scelerisque leo eu semper malesuada.
-      </p>
-      <h3>Playground Search</h3>
-      <p>Search by location or click "Surprise Me" for any NYC playground.</p>
-      <SearchBar
-        criteria={criteria}
-        setCriteria={setCriteria}
-        fetchPlayground={fetchPlayground}
-      />
-      <button onClick={handleSurpriseMe}>Surprise Me</button>
-      {loading && <Preloader />}
-      {playground && (
-        <div>
-          <h3>Search Result</h3>
-          <PlaygroundCard playground={playground} />
-          <button onClick={() => fetchPlayground(criteria)}>Try Again</button>
-          <Link to={`/details/${playground.objectid}`} state={{ playground }}>
-            <button>Learn More</button>
-          </Link>
-        </div>
-      )}
-      {showPopup && <Popup message={popupMessage} onClose={closePopup} />}
-      <Footer />
-    </div>
+    <Main currentPage="Home">
+      <div className="home-page">
+        <h1>NYC Playground Finder</h1>
+        <h2>This is a subtitle</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          scelerisque leo eu semper malesuada.
+        </p>
+        <h3>Playground Search</h3>
+        <p>Search by location or click "Surprise Me" for any NYC playground.</p>
+        <SearchBar
+          criteria={criteria}
+          setCriteria={setCriteria}
+          fetchPlayground={fetchPlayground}
+        />
+        <button onClick={handleSurpriseMe}>Surprise Me</button>
+        {loading && <Preloader />}
+        {playground && (
+          <div>
+            <h3>Search Result</h3>
+            <PlaygroundCard playground={playground} />
+            <button onClick={() => fetchPlayground(criteria)}>Try Again</button>
+            <Link to={`/details/${playground.objectid}`} state={{ playground }}>
+              <button>Learn More</button>
+            </Link>
+          </div>
+        )}
+        {showPopup && <Popup message={popupMessage} onClose={closePopup} />}
+      </div>
+    </Main>
   );
 };
 
