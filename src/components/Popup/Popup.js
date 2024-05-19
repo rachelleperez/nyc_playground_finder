@@ -16,6 +16,6 @@ const Popup = ({ message, onClose }) => {
       </div>
     </div>
   );
-};
+}; //TODO: consider removing redundant Dismiss button
 
 export default Popup;
