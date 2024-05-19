@@ -17,7 +17,7 @@ const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
 
     setCriteria((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: value === "Any" ? null : value, // if "Any", make the value null
     }));
   };
 
