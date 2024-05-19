@@ -25,6 +25,7 @@ const ParkDetailsPage = () => {
     zipcode,
     latitude,
     longitude,
+    description,
   } = playground;
 
   return (
@@ -46,10 +47,7 @@ const ParkDetailsPage = () => {
       </p>
 
       <h3>Description</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-        scelerisque leo eu semper malesuada.
-      </p>
+      <p>{description}</p>
       <button
         onClick={() =>
           (window.location.href = "https://www.nycgovparks.org/parks/")

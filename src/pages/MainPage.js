@@ -53,8 +53,14 @@ const MainPage = () => {
         if (htmlResponse.data && htmlResponse.data.contents) {
           const html = htmlResponse.data.contents;
           const $ = cheerio.load(html);
+
+          // Extract the image
           const imageUrl = $(".featured_src").attr("src");
-          console.log(`Fetched Image URL: ${imageUrl}`); // Log the fetched image URL
+          console.log(`Fetched Image URL: ${imageUrl}`);
+
+          // Extract the description
+          const description = $("#park_description p").first().text();
+          console.log(`Fetched Description: ${description}`);
 
           const coordinates = randomPlayground.multipolygon.coordinates[0][0];
           const [lon, lat] = coordinates[0];
@@ -64,6 +70,9 @@ const MainPage = () => {
             displayAddress:
               randomPlayground.address || randomPlayground.location,
             imageUrl: imageUrl || "https://via.placeholder.com/300",
+            description:
+              description ||
+              "Click the link below to the NYC Parks website to learn more.",
             boroughName: boroughNames[playgroundBorough],
             zipcode: randomPlayground.zipcode,
             objectid: randomPlayground.objectid,
