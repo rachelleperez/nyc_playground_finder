@@ -124,6 +124,7 @@ const MainPage = () => {
 
   const handleSurpriseMe = () => {
     fetchPlayground({ borough: null, zipcode: null });
+    setCriteria({ borough: "Any", zipcode: "" }); // as this criteria is ignored, reset
   };
 
   return (
