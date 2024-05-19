@@ -48,13 +48,20 @@ const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
         <option value="Staten Island">Staten Island</option>
       </select>
       <p>Enter a 5-digit Zip Code</p>
-      <input
-        type="text"
-        name="zipcode"
-        placeholder="Zipcode"
-        value={criteria.zipcode || ""}
-        onChange={handleInputChange}
-      />
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <img
+          src="/images/searchIcon.svg"
+          alt="Search Icon"
+          style={{ marginRight: "8px" }}
+        />
+        <input
+          type="text"
+          name="zipcode"
+          placeholder="Zipcode"
+          value={criteria.zipcode || ""}
+          onChange={handleInputChange}
+        />
+      </div>
       {zipError && <p style={{ color: "red" }}>{zipError}</p>}
       <button type="submit">Search</button>
     </form>
