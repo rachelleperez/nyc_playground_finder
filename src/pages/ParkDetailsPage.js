@@ -44,10 +44,6 @@ const ParkDetailsPage = () => {
         }}
         style={{ width: "300px", height: "200px" }}
       />
-      <p>{displayAddress}</p>
-      <p>
-        {boroughName}, NY {zipcode}
-      </p>
 
       <h3>Description</h3>
       <p>{description}</p>
@@ -55,8 +51,11 @@ const ParkDetailsPage = () => {
         Go to Parks Website
       </button>
 
-      <h3>Map</h3>
+      <h3>Directions</h3>
       <MapComponent latitude={latitude} longitude={longitude} name={name} />
+      <p>
+        {displayAddress}, {boroughName}, NY {zipcode}
+      </p>
       <button onClick={() => window.open(googleMapsLink, "_blank")}>
         Get Directions
       </button>

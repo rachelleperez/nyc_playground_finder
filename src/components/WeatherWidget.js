@@ -39,6 +39,37 @@ const WeatherWidget = ({ latitude, longitude }) => {
     99: "Thunderstorm with hail",
   };
 
+  const weatherCodeEmojis = {
+    0: 127774, // Clear sky ☀️
+    1: 127773, // Mainly clear 🌤️
+    2: 9925, // Partly cloudy ⛅
+    3: 9729, // Overcast ☁️
+    45: 127787, // Fog 🌫️
+    48: 127787, // Depositing rime fog 🌫️
+    51: 127746, // Drizzle: Light 🌦️
+    53: 127746, // Drizzle: Moderate 🌦️
+    55: 127746, // Drizzle: Dense intensity 🌦️
+    56: 127784, // Freezing Drizzle: Light 🌧️
+    57: 127784, // Freezing Drizzle: Dense 🌧️
+    61: 127783, // Rain: Slight 🌧️
+    63: 127783, // Rain: Moderate 🌧️
+    65: 127783, // Rain: Heavy intensity 🌧️
+    66: 127784, // Freezing Rain: Light 🌧️
+    67: 127784, // Freezing Rain: Heavy 🌧️
+    71: 127782, // Snow fall: Slight 🌨️
+    73: 127782, // Snow fall: Moderate 🌨️
+    75: 127782, // Snow fall: Heavy intensity 🌨️
+    77: 10052, // Snow grains ❄️
+    80: 127781, // Rain showers: Slight 🌧️
+    81: 127781, // Rain showers: Moderate 🌧️
+    82: 127781, // Rain showers: Violent 🌧️
+    85: 127784, // Snow showers: Slight 🌧️
+    86: 127784, // Snow showers: Heavy 🌧️
+    95: 127785, // Thunderstorm: Slight 🌩️
+    96: 127785, // Thunderstorm: Moderate 🌩️
+    99: 127785, // Thunderstorm with hail 🌩️
+  };
+
   useEffect(() => {
     const fetchWeather = async () => {
       try {
@@ -86,12 +117,16 @@ const WeatherWidget = ({ latitude, longitude }) => {
   // Convert temperature from Celsius to Fahrenheit
   const temperatureFahrenheit = (temperature * 9) / 5 + 32;
 
+  // Get emoji HTML for weather
+  const emojiHTML = `&#${weatherCodeEmojis[weathercode]};`;
+
   return (
     <div>
-      <p>Temperature: {temperatureFahrenheit.toFixed(1)}°F</p>
-      <p>Condition: {weatherCodeDescriptions[weathercode]}</p>
+      <p dangerouslySetInnerHTML={{ __html: emojiHTML }}></p>
+      <p>{temperatureFahrenheit.toFixed(1)}°F</p>
+      <p>{weatherCodeDescriptions[weathercode]}</p>
       {precipitationProbability !== null && (
-        <p>Precipitation Probability: {precipitationProbability}%</p>
+        <p>{precipitationProbability}% Precipitation</p>
       )}
     </div>
   );

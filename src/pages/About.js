@@ -22,6 +22,14 @@ const About = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
           scelerisque leo eu semper malesuada.
         </p>
+      </section>
+
+      <section>
+        <h2>Explore the Project</h2>
+        <p>
+          Select from the options below to learn more by reviewing the source
+          code or connecting the author.
+        </p>
         <button
           onClick={() => (window.location.href = "https://www.google.com/")}
         >

@@ -132,6 +132,8 @@ const MainPage = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
         scelerisque leo eu semper malesuada.
       </p>
+      <h3>Playground Search</h3>
+      <p>Search by location or click "Surprise Me" for any NYC playground.</p>
       <SearchBar
         criteria={criteria}
         setCriteria={setCriteria}
@@ -141,6 +143,7 @@ const MainPage = () => {
       {loading && <Preloader />}
       {playground && (
         <div>
+          <h3>Search Result</h3>
           <PlaygroundCard playground={playground} />
           <button onClick={() => fetchPlayground(criteria)}>Try Again</button>
           <Link to={`/details/${playground.objectid}`} state={{ playground }}>
