@@ -21,6 +21,7 @@ const ParkDetailsPage = () => {
     name,
     displayAddress,
     imageUrl,
+    parkUrl,
     boroughName,
     zipcode,
     latitude,
@@ -48,11 +49,7 @@ const ParkDetailsPage = () => {
 
       <h3>Description</h3>
       <p>{description}</p>
-      <button
-        onClick={() =>
-          (window.location.href = "https://www.nycgovparks.org/parks/")
-        }
-      >
+      <button onClick={() => (window.location.href = parkUrl)}>
         Go to Parks Website
       </button>
 

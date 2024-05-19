@@ -42,7 +42,7 @@ const MainPage = () => {
         const randomPlayground = data[Math.floor(Math.random() * data.length)];
         const playgroundBorough = randomPlayground.borough;
 
-        console.log(randomPlayground); // Log only the selected playground data
+        console.log("Playground Data from NYC Parks API: ", randomPlayground); // Log only the selected playground data
 
         // Use AllOrigins to fetch the HTML
         const htmlResponse = await axios.get(
@@ -70,6 +70,8 @@ const MainPage = () => {
             displayAddress:
               randomPlayground.address || randomPlayground.location,
             imageUrl: imageUrl || "https://via.placeholder.com/300",
+            parkUrl:
+              randomPlayground.url || "https://www.nycgovparks.org/parks/",
             description:
               description ||
               "Click the link below to the NYC Parks website to learn more.",
