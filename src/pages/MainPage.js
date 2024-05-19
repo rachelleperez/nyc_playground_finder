@@ -4,6 +4,7 @@ import PlaygroundCard from "../components/PlaygroundCard";
 import SearchBar from "../components/SearchBar";
 import Preloader from "../components/Preloader";
 import Popup from "../components/Popup";
+import Footer from "../components/Footer";
 import {
   boroughNames,
   boroughOptions,
@@ -69,7 +70,7 @@ const MainPage = () => {
             name: randomPlayground.name311,
             displayAddress:
               randomPlayground.address || randomPlayground.location,
-            imageUrl: imageUrl || "https://via.placeholder.com/300",
+            imageUrl: imageUrl || "https://via.placeholder.com/300", // TODO: consider an 'image' placeholder based on the playground slide emoji
             parkUrl:
               randomPlayground.url || "https://www.nycgovparks.org/parks/",
             description:
@@ -152,6 +153,7 @@ const MainPage = () => {
         </div>
       )}
       {showPopup && <Popup message={popupMessage} onClose={closePopup} />}
+      <Footer />
     </div>
   );
 };

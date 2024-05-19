@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import MapComponent from "../components/MapComponent";
 import WeatherWidget from "../components/WeatherWidget";
+import Footer from "../components/Footer";
 
 const ParkDetailsPage = () => {
   const location = useLocation();
@@ -64,6 +65,7 @@ const ParkDetailsPage = () => {
       <WeatherWidget latitude={latitude} longitude={longitude} />
 
       <button onClick={() => navigate("/")}>Back to Search</button>
+      <Footer />
     </div>
   );
 };

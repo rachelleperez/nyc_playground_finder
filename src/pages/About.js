@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const About = () => {
   const navigate = useNavigate();
@@ -43,6 +44,7 @@ const About = () => {
       </section>
 
       <button onClick={() => navigate("/")}>Back to Search</button>
+      <Footer />
     </div>
   );
 };
