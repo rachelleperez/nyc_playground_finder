@@ -127,6 +127,11 @@ const MainPage = () => {
   return (
     <div className="main-page">
       <h1>NYC Playground Finder</h1>
+      <h2>This is a subtitle</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+        scelerisque leo eu semper malesuada.
+      </p>
       <SearchBar
         criteria={criteria}
         setCriteria={setCriteria}
