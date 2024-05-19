@@ -111,8 +111,8 @@ const Home = () => {
   };
 
   const closePopup = () => {
-    setShowPopup(false);
     setCriteria({ borough: "Any", zipcode: "" }); // as this criteria is ignored, reset
+    setShowPopup(false);
   };
 
   const getRandomBorough = () => {
@@ -125,8 +125,8 @@ const Home = () => {
   };
 
   const handleSurpriseMe = () => {
-    fetchPlayground({ borough: null, zipcode: null });
     setCriteria({ borough: "Any", zipcode: "" }); // as this criteria is ignored, reset
+    fetchPlayground({ borough: null, zipcode: null });
   };
 
   return (
