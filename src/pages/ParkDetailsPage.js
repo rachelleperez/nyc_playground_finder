@@ -29,6 +29,8 @@ const ParkDetailsPage = () => {
     description,
   } = playground;
 
+  const googleMapsLink = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
+
   return (
     <div className="park-details-page">
       <h1>Playground Details</h1>
@@ -55,6 +57,9 @@ const ParkDetailsPage = () => {
 
       <h3>Map</h3>
       <MapComponent latitude={latitude} longitude={longitude} name={name} />
+      <button onClick={() => window.open(googleMapsLink, "_blank")}>
+        Get Directions
+      </button>
 
       <h3>Current Weather</h3>
       <WeatherWidget latitude={latitude} longitude={longitude} />
