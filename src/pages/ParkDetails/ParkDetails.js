@@ -1,8 +1,8 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Main from "../components/Main/Main";
-import Map from "../components/Map/Map";
-import WeatherWidget from "../components/WeatherWidget/WeatherWidget";
+import Main from "../../components/Main/Main";
+import Map from "../../components/Map/Map";
+import WeatherWidget from "../../components/WeatherWidget/WeatherWidget";
 
 const ParkDetails = () => {
   const location = useLocation();

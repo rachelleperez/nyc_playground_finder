@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Main from "../components/Main/Main";
-import PlaygroundCard from "../components/PaygroundCard/PlaygroundCard";
-import SearchBar from "../components/SearchBar/SearchBar";
-import Preloader from "../components/Preloader/Preloader";
-import Popup from "../components/Popup/Popup";
+import Main from "../../components/Main/Main";
+import PlaygroundCard from "../../components/PaygroundCard/PlaygroundCard";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import Preloader from "../../components/Preloader/Preloader";
+import Popup from "../../components/Popup/Popup";
 
 import {
   boroughNames,
   boroughOptions,
   baseURIs,
   popupMessages,
-} from "../utils/constants";
+} from "../../utils/constants";
 import axios from "axios";
 import cheerio from "cheerio";
 
