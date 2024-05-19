@@ -3,8 +3,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Main from "../components/Main/Main";
 import Map from "../components/Map/Map";
 import WeatherWidget from "../components/WeatherWidget/WeatherWidget";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 
 const ParkDetails = () => {
   const location = useLocation();
@@ -37,7 +35,6 @@ const ParkDetails = () => {
   return (
     <Main currentPage="ParkDetails">
       <div className="park-details-page">
-        <Header currentPage="About" />
         <h1>Playground Details</h1>
         <h2>{name}</h2>
         <img
@@ -69,7 +66,6 @@ const ParkDetails = () => {
         <WeatherWidget latitude={latitude} longitude={longitude} />
 
         <button onClick={() => navigate("/")}>Back to Search</button>
-        <Footer />
       </div>
     </Main>
   );

@@ -5,8 +5,7 @@ import PlaygroundCard from "../components/PaygroundCard/PlaygroundCard";
 import SearchBar from "../components/SearchBar/SearchBar";
 import Preloader from "../components/Preloader/Preloader";
 import Popup from "../components/Popup/Popup";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+
 import {
   boroughNames,
   boroughOptions,

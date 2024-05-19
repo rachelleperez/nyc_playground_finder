@@ -119,6 +119,7 @@ const WeatherWidget = ({ latitude, longitude }) => {
 
   // Get emoji HTML for weather
   const emojiHTML = `&#${weatherCodeEmojis[weathercode]};`;
+  console.log(emojiHTML);
 
   return (
     <div>
