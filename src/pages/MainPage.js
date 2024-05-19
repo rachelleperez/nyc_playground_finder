@@ -4,6 +4,7 @@ import PlaygroundCard from "../components/PlaygroundCard";
 import SearchBar from "../components/SearchBar";
 import Preloader from "../components/Preloader";
 import Popup from "../components/Popup";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {
   boroughNames,
@@ -127,6 +128,7 @@ const MainPage = () => {
 
   return (
     <div className="main-page">
+      <Header currentPage="MainPage" />
       <h1>NYC Playground Finder</h1>
       <h2>This is a subtitle</h2>
       <p>

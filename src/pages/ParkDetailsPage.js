@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import MapComponent from "../components/MapComponent";
 import WeatherWidget from "../components/WeatherWidget";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const ParkDetailsPage = () => {
@@ -34,6 +35,7 @@ const ParkDetailsPage = () => {
 
   return (
     <div className="park-details-page">
+      <Header currentPage="ParkDetails" />
       <h1>Playground Details</h1>
       <h2>{name}</h2>
       <img

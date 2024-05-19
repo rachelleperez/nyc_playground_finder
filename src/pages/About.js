@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const About = () => {
@@ -7,6 +8,7 @@ const About = () => {
 
   return (
     <div className="about-page">
+      <Header currentPage="About" />
       <h1>About NYC Playground Finder</h1>
 
       <section>
