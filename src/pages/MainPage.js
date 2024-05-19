@@ -120,6 +120,10 @@ const MainPage = () => {
     return boroughOptions[randomKey];
   };
 
+  const handleSurpriseMe = () => {
+    fetchPlayground({ borough: null, zipcode: null });
+  };
+
   return (
     <div className="main-page">
       <h1>NYC Playground Finder</h1>
@@ -128,6 +132,7 @@ const MainPage = () => {
         setCriteria={setCriteria}
         fetchPlayground={fetchPlayground}
       />
+      <button onClick={handleSurpriseMe}>Surprise Me</button>
       {loading && <Preloader />}
       {playground && (
         <div>
