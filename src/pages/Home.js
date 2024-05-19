@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import PlaygroundCard from "../components/PlaygroundCard";
-import SearchBar from "../components/SearchBar";
-import Preloader from "../components/Preloader";
-import Popup from "../components/Popup";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import PlaygroundCard from "../components/PaygroundCard/PlaygroundCard";
+import SearchBar from "../components/SearchBar/SearchBar";
+import Preloader from "../components/Preloader/Preloader";
+import Popup from "../components/Popup/Popup";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 import {
   boroughNames,
   boroughOptions,
@@ -15,7 +15,7 @@ import {
 import axios from "axios";
 import cheerio from "cheerio";
 
-const MainPage = () => {
+const Home = () => {
   console.log("-------- Reached Main Page --------");
 
   const [criteria, setCriteria] = useState({});
@@ -85,7 +85,7 @@ const MainPage = () => {
           };
 
           setPlayground(mappedPlayground);
-          console.log("Playground Data in MainPage: ", mappedPlayground); // Log the mapped playground data
+          console.log("Playground Data in Home: ", mappedPlayground); // Log the mapped playground data
         } else {
           throw new Error("Failed to fetch HTML content from AllOrigins");
         }
@@ -129,7 +129,7 @@ const MainPage = () => {
 
   return (
     <div className="main-page">
-      <Header currentPage="MainPage" />
+      <Header currentPage="Home" />
       <h1>NYC Playground Finder</h1>
       <h2>This is a subtitle</h2>
       <p>
@@ -161,4 +161,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default Home;

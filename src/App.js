@@ -1,14 +1,14 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import MainPage from "./pages/MainPage";
-import ParkDetailsPage from "./pages/ParkDetailsPage";
+import Home from "./pages/Home";
+import ParkDetails from "./pages/ParkDetails";
 import About from "./pages/About";
 
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<MainPage />} />
-      <Route path="/details/:id" element={<ParkDetailsPage />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/details/:id" element={<ParkDetails />} />
       <Route path="about" element={<About />} />
     </Routes>
   );

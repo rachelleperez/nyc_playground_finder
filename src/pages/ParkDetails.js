@@ -1,17 +1,17 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import MapComponent from "../components/MapComponent";
-import WeatherWidget from "../components/WeatherWidget";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Map from "../components/Map/Map";
+import WeatherWidget from "../components/WeatherWidget/WeatherWidget";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 
-const ParkDetailsPage = () => {
+const ParkDetails = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const playground = location.state?.playground;
 
   console.log("------ Reached Park Details Page ---------");
-  console.log("Playground Data in ParkDetailsPage: ", playground);
+  console.log("Playground Data in ParkDetails: ", playground);
 
   if (!playground || !playground.name) {
     return (
@@ -55,7 +55,7 @@ const ParkDetailsPage = () => {
       </button>
 
       <h3>Directions</h3>
-      <MapComponent latitude={latitude} longitude={longitude} name={name} />
+      <Map latitude={latitude} longitude={longitude} name={name} />
       <p>
         {displayAddress}, {boroughName}, NY {zipcode}
       </p>
@@ -72,4 +72,4 @@ const ParkDetailsPage = () => {
   );
 };
 
-export default ParkDetailsPage;
+export default ParkDetails;
