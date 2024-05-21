@@ -1,0 +1,77 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.home-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.home-page h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.home-page p {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.search-filter {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  gap: 50px;
+}
+
+.search-filter > * {
+  flex: 1;
+  box-sizing: border-box; /* Ensures padding is included in the element's total width */
+}
+
+.home-page-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.home-page button:hover {
+  background-color: #0056b3;
+}
+
+.home-page .subtitle {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: normal; /* To Remove bold */
+  font-style: italic;
+}
+
+/* Center the search result */
+.search-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  margin-top: 20px;
+}
+
+.search-result h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-result .home-page-button {
+  margin-top: 10px;
+}

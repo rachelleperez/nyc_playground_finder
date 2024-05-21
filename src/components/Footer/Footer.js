@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="footer">
       <p>
         &copy; <span id="current-year">{new Date().getFullYear()}</span>{" "}
         Rachelle Perez. All rights reserved.

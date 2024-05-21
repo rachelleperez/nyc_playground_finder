@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navigation = ({ currentPage }) => {
   return (
-    <nav>
+    <nav className="nav">
       {currentPage === "Home" && <Link to="/about">About</Link>}
       {currentPage === "ParkDetails" && (
         <>

@@ -13,7 +13,7 @@ L.Icon.Default.mergeOptions({
     "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
 });
 
-const MapComponent = ({ latitude, longitude, name }) => {
+const Map = ({ latitude, longitude, name }) => {
   useEffect(() => {
     const map = L.map("map").setView([latitude, longitude], 13);
 
@@ -28,7 +28,7 @@ const MapComponent = ({ latitude, longitude, name }) => {
     };
   }, [latitude, longitude]);
 
-  return <div id="map" style={{ height: "300px", width: "100%" }}></div>;
-};
+  return <div id="map" className="map"></div>;
+}; // TODO: consider GoogleMaps instead
 
-export default MapComponent;
+export default Map;

@@ -1,0 +1,34 @@
+.playground-card {
+  background: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.playground-card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.playground-card h3 {
+  margin-top: 0;
+}
+
+.playground-card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.playground-card button:hover {
+  background-color: #0056b3;
+}

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Main from "../../components/Main/Main";
-import PlaygroundCard from "../../components/PaygroundCard/PlaygroundCard";
+import PlaygroundCard from "../../components/PlaygroundCard/PlaygroundCard";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Preloader from "../../components/Preloader/Preloader";
 import Popup from "../../components/Popup/Popup";
+import "./Home.css";
 
 import {
   boroughNames,
@@ -132,27 +133,32 @@ const Home = () => {
     <Main currentPage="Home">
       <div className="home-page">
         <h1>NYC Playground Finder</h1>
-        <h2>This is a subtitle</h2>
+        <h3 className="subtitle">
+          Discover the best playgrounds in New York City.{" "}
+        </h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
           scelerisque leo eu semper malesuada.
         </p>
-        <h3>Playground Search</h3>
+        <h2>Playground Search</h2>
         <p>Search by location or click "Surprise Me" for any NYC playground.</p>
-        <SearchBar
-          criteria={criteria}
-          setCriteria={setCriteria}
-          fetchPlayground={fetchPlayground}
-        />
-        <button onClick={handleSurpriseMe}>Surprise Me</button>
+        <div className="search-filter">
+          <SearchBar
+            criteria={criteria}
+            setCriteria={setCriteria}
+            fetchPlayground={fetchPlayground}
+          />
+          <button className="home-page-button" onClick={handleSurpriseMe}>
+            Surprise Me
+          </button>
+        </div>
         {loading && <Preloader />}
         {playground && (
-          <div>
+          <div className="search-result">
             <h3>Search Result</h3>
             <PlaygroundCard playground={playground} />
-            <button onClick={() => fetchPlayground(criteria)}>Try Again</button>
             <Link to={`/details/${playground.objectid}`} state={{ playground }}>
-              <button>Learn More</button>
+              <button className="home-page-button">Learn More</button>
             </Link>
           </div>
         )}

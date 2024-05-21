@@ -1,0 +1,31 @@
+.park-details-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.park-details-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.park-details-page img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.park-details-page button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.park-details-page button:hover {
+  background-color: #0056b3;
+}

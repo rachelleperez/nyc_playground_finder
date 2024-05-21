@@ -1,5 +1,5 @@
 import React from "react";
-import "./Popup.css"; // Assuming you have a separate CSS file for the Popup component
+import "./Popup.css";
 
 const Popup = ({ message, onClose }) => {
   return (
@@ -8,14 +8,13 @@ const Popup = ({ message, onClose }) => {
         <img
           src="/images/Cross.svg"
           alt="Close"
-          className="close-button"
+          className="popup-close-button"
           onClick={onClose}
         />
         <p>{message}</p>
-        <button onClick={onClose}>Dismiss</button>
       </div>
     </div>
   );
-}; //TODO: consider removing redundant Dismiss button
+};
 
 export default Popup;

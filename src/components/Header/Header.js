@@ -3,7 +3,7 @@ import Navigation from "../Navigation/Navigation";
 
 const Header = ({ currentPage }) => {
   return (
-    <header>
+    <header className="header">
       <p>NYC Playground Finder</p>
       <Navigation currentPage={currentPage} />
     </header>

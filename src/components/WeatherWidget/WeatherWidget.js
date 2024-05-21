@@ -122,12 +122,21 @@ const WeatherWidget = ({ latitude, longitude }) => {
   console.log(emojiHTML);
 
   return (
-    <div>
-      <p dangerouslySetInnerHTML={{ __html: emojiHTML }}></p>
-      <p>{temperatureFahrenheit.toFixed(1)}°F</p>
-      <p>{weatherCodeDescriptions[weathercode]}</p>
+    <div className="weather-widget">
+      <p
+        className="weather-widget-emoji"
+        dangerouslySetInnerHTML={{ __html: emojiHTML }}
+      ></p>
+      <p className="weather-widget-temp">
+        {temperatureFahrenheit.toFixed(1)}°F
+      </p>
+      <p className="weather-widget-text">
+        {weatherCodeDescriptions[weathercode]}
+      </p>
       {precipitationProbability !== null && (
-        <p>{precipitationProbability}% Precipitation</p>
+        <p className="weather-widget-text">
+          {precipitationProbability}% Precipitation
+        </p>
       )}
     </div>
   );

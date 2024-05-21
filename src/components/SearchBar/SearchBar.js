@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./SearchBar.css";
 
 const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
   const [zipError, setZipError] = useState("");
@@ -33,7 +34,7 @@ const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="search-bar">
       <p>Select a Borough (or choose "All")</p>
       <select
         name="borough"
@@ -63,7 +64,7 @@ const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
         />
       </div>
       {zipError && <p style={{ color: "red" }}>{zipError}</p>}
-      <button type="submit">Search</button>
+      <button type="submit">Search by Location</button>
     </form>
   );
 };
