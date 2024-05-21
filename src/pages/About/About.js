@@ -13,16 +13,24 @@ const About = () => {
         <section>
           <h2>What is the NYC Playground Finder?</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            scelerisque leo eu semper malesuada.
+            This tool is a web application designed to help users search for and
+            discover playgrounds in New York City based on specific search
+            criteria. It provides detailed information about each playground
+            discovered, including weather data and an interactive map, enhancing
+            the user experience by offering comprehensive insights into each
+            playground.
           </p>
         </section>
 
         <section>
           <h2>How was NYC Playground Finder made?</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            scelerisque leo eu semper malesuada.
+            The application was built using a tech stack primarily consisting of
+            JavaScript and React, complemented by HTML and CSS for the frontend
+            structure and styling. It leverages various external APIs, including
+            the NYC Open Data API for playground data, the Open-Meteo API for
+            weather information, and OpenStreetMap for map integration. The
+            project is hosted on a GitHub repository (linked below).
           </p>
         </section>
 
@@ -30,15 +38,21 @@ const About = () => {
           <h2>Explore the Project</h2>
           <p>
             Select from the options below to learn more by reviewing the source
-            code or connecting the author.
+            code or connecting with the author.
           </p>
           <button
-            onClick={() => (window.location.href = "https://www.google.com/")}
+            onClick={() =>
+              (window.location.href =
+                "https://github.com/rachelleperez/nyc_playground_finder")
+            }
           >
             Source Code
           </button>
           <button
-            onClick={() => (window.location.href = "mailto:author@example.com")} // TODO: LinkedIn or email
+            onClick={() =>
+              (window.location.href =
+                "https://www.linkedin.com/in/rachelleperez/")
+            }
           >
             Connect with Author
           </button>

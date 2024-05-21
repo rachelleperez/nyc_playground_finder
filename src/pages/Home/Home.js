@@ -137,8 +137,10 @@ const Home = () => {
           Discover the best playgrounds in New York City.{" "}
         </h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-          scelerisque leo eu semper malesuada.
+          Explore a wide variety of playgrounds in New York City. Whether you're
+          looking for a specific location or just want to be surprised, this
+          tool helps you find the perfect playground for your needs. Get
+          real-time weather updates and detailed maps to plan your visit.
         </p>
         <h2>Playground Search</h2>
         <p>Search by location or click "Surprise Me" for any NYC playground.</p>
