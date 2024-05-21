@@ -43,8 +43,6 @@ const About = () => {
             Connect with Author
           </button>
         </section>
-
-        <button onClick={() => navigate("/")}>Back to Search</button>
       </div>
     </Main>
   );
