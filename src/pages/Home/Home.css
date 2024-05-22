@@ -16,7 +16,10 @@
   margin-bottom: 20px;
 }
 
-.home__description,
+.home__description {
+  margin-bottom: 10px;
+}
+
 .home__search-description {
   margin-bottom: 10px;
 }

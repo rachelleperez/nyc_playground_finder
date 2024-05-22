@@ -29,8 +29,14 @@
   margin-right: 8px;
 }
 
-.search-bar__label,
-.search-bar__error,
+.search-bar__label {
+  margin-bottom: 10px;
+}
+
+.search-bar__error {
+  margin-bottom: 10px;
+}
+
 .search-bar__input-wrapper {
   margin-bottom: 10px;
 }

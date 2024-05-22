@@ -31,9 +31,18 @@
   background-color: #0056b3;
 }
 
-.park-details__subtitle,
-.park-details__section-title,
-.park-details__description,
+.park-details__subtitle {
+  margin-bottom: 20px;
+}
+
+.park-details__section-title {
+  margin-bottom: 20px;
+}
+
+.park-details__description {
+  margin-bottom: 20px;
+}
+
 .park-details__address {
   margin-bottom: 20px;
 }
