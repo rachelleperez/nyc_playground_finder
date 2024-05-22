@@ -41,6 +41,18 @@ img {
   }
 }
 
+@media (max-width: 768px) {
+  body {
+    background-color: black;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif; /* Google Font */
+    font-size: 14px; /* Smaller root size */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
 /* Component-specific styles */
 @import "./components/Header/Header.css";
 @import "./components/Footer/Footer.css";

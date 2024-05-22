@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  text-align: center;
 }
 
 .home-page h1 {
@@ -74,4 +75,12 @@
 
 .search-result .home-page-button {
   margin-top: 10px;
+}
+
+/* Update needed to look good in smaller screens */
+@media (max-width: 768px) {
+  .search-filter {
+    flex-direction: column;
+    gap: 20px;
+  }
 }

@@ -13,7 +13,6 @@ const PlaygroundCard = ({ playground }) => {
           e.target.onerror = null; // Prevent infinite loop if placeholder fails
           e.target.src = "https://via.placeholder.com/300";
         }}
-        style={{ width: "300px", height: "200px" }}
       />
       <p>{displayAddress}</p>
       <p>
