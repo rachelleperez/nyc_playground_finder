@@ -1,23 +1,23 @@
-.park-details-page {
+.park-details {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-}
-
-.park-details-page h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
   text-align: center;
 }
 
-.park-details-page img {
+.park-details__title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.park-details__image {
   max-width: 100%;
   border-radius: 5px;
   margin-bottom: 20px;
 }
 
-.park-details-page button {
+.park-details__button {
   background-color: #007bff;
   color: white;
   border: none;
@@ -27,6 +27,13 @@
   margin-top: 10px;
 }
 
-.park-details-page button:hover {
+.park-details__button:hover {
   background-color: #0056b3;
+}
+
+.park-details__subtitle,
+.park-details__section-title,
+.park-details__description,
+.park-details__address {
+  margin-bottom: 20px;
 }
