@@ -1,57 +1,13 @@
 /* Import normalize.css */
 @import "normalize.css";
 
-/* Import Google Font */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+/* Global styles */
+@import "./App.css";
 
-/* Global Styles */
-body {
-  /* background-color: #013220; */
-  background-color: black;
-  color: #ffffff;
-  font-family: "Montserrat", sans-serif; /* Google Font */
-  font-size: 16px; /* Root Size, font-size: 1.5rem relative to this */
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-button,
-input,
-img {
-  border-radius: 5px;
-}
-
-/* Container for responsive grid layout */
-.container {
-  display: grid;
-  gap: 20px;
-  padding: 20px;
-}
-
-@media (min-width: 600px) {
-  .container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 900px) {
-  .container {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    background-color: black;
-    color: #ffffff;
-    font-family: "Montserrat", sans-serif; /* Google Font */
-    font-size: 14px; /* Smaller root size */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-}
+/* Page-specific styles */
+@import "./pages/Home/Home.css";
+@import "./pages/About/About.css";
+@import "./pages/ParkDetails/ParkDetails.css";
 
 /* Component-specific styles */
 @import "./components/Header/Header.css";
@@ -64,6 +20,3 @@ img {
 @import "./components/Navigation/Navigation.css";
 @import "./components/Preloader/Preloader.css";
 @import "./components/WeatherWidget/WeatherWidget.css";
-@import "./pages/Home/Home.css";
-@import "./pages/About/About.css";
-@import "./pages/ParkDetails/ParkDetails.css";

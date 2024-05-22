@@ -6,11 +6,13 @@ import About from "./pages/About/About";
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/details/:id" element={<ParkDetails />} />
-      <Route path="about" element={<About />} />
-    </Routes>
+    <div className="app">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/details/:id" element={<ParkDetails />} />
+        <Route path="about" element={<About />} />
+      </Routes>
+    </div>
   );
 };
 
