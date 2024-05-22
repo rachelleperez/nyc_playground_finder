@@ -29,6 +29,6 @@ const Map = ({ latitude, longitude, name }) => {
   }, [latitude, longitude]);
 
   return <div id="map" className="map"></div>;
-}; // TODO: consider GoogleMaps instead
+};
 
 export default Map;
