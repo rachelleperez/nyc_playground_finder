@@ -11,7 +11,7 @@
   z-index: 1000;
 }
 
-.popup-content {
+.popup__content {
   background: #ffffff;
   color: #000000;
   padding: 20px;
@@ -21,25 +21,11 @@
   width: 300px;
 }
 
-.popup-close-button {
+.popup__close-button {
   position: absolute;
   top: 10px;
   right: 10px;
   width: 20px;
   height: 20px;
   cursor: pointer;
-}
-
-.popup-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.popup-button:hover {
-  background-color: #0056b3;
 }
