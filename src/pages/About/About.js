@@ -1,18 +1,21 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Main from "../../components/Main/Main";
+import "./About.css";
 
 const About = () => {
   const navigate = useNavigate();
 
   return (
     <Main currentPage="About">
-      <div className="about-page">
-        <h1>About NYC Playground Finder</h1>
+      <div className="about">
+        <h1 className="about__title">About NYC Playground Finder</h1>
 
-        <section>
-          <h2>What is the NYC Playground Finder?</h2>
-          <p>
+        <section className="about__section">
+          <h2 className="about__section-title">
+            What is the NYC Playground Finder?
+          </h2>
+          <p className="about__section-description">
             This tool is a web application designed to help users search for and
             discover playgrounds in New York City based on specific search
             criteria. It provides detailed information about each playground
@@ -22,9 +25,11 @@ const About = () => {
           </p>
         </section>
 
-        <section>
-          <h2>How was NYC Playground Finder made?</h2>
-          <p>
+        <section className="about__section">
+          <h2 className="about__section-title">
+            How was NYC Playground Finder made?
+          </h2>
+          <p className="about__section-description">
             The application was built using a tech stack primarily consisting of
             JavaScript and React, complemented by HTML and CSS for the frontend
             structure and styling. It leverages various external APIs, including
@@ -34,13 +39,14 @@ const About = () => {
           </p>
         </section>
 
-        <section>
-          <h2>Explore the Project</h2>
-          <p>
+        <section className="about__section">
+          <h2 className="about__section-title">Explore the Project</h2>
+          <p className="about__section-description">
             Select from the options below to learn more by reviewing the source
             code or connecting with the author.
           </p>
           <button
+            className="about__button"
             onClick={() =>
               (window.location.href =
                 "https://github.com/rachelleperez/nyc_playground_finder")
@@ -49,6 +55,7 @@ const About = () => {
             Source Code
           </button>
           <button
+            className="about__button"
             onClick={() =>
               (window.location.href =
                 "https://www.linkedin.com/in/rachelleperez/")

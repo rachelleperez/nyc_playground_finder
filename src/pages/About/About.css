@@ -1,4 +1,4 @@
-.about-page {
+.about {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,26 +6,33 @@
   text-align: center;
 }
 
-.about-page h1 {
+.about__title {
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
-.about-page section {
+.about__section {
   margin-bottom: 20px;
-  text-align: center;
 }
 
-.about-page button {
+.about__button {
   background-color: #007bff;
   color: white;
   border: none;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
-  margin: 10px 10px 10px 10px;
+  margin: 10px;
 }
 
-.about-page button:hover {
+.about__button:hover {
   background-color: #0056b3;
+}
+
+.about__section-title {
+  margin-bottom: 20px;
+}
+
+.about__section-description {
+  margin-bottom: 20px;
 }
