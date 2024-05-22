@@ -27,74 +27,87 @@ export const fetchPlayground = async (
       url = `${baseURIs.nycParks}?borough=${borough}&typecategory=Playground`;
     }
 
-    console.log(`API Call: ${url}`); // Log the API call
-    const response = await fetch(url);
-    const data = await response.json();
-    if (Array.isArray(data) && data.length > 0) {
-      const randomPlayground = data[Math.floor(Math.random() * data.length)];
-      const playgroundBorough = randomPlayground.borough;
+    console.log(`API Call: ${url}`);
 
-      console.log("Playground Data from NYC Parks API: ", randomPlayground); // Log only the selected playground data
+    fetch(url)
+      .then((response) => response.json()) // First then() handler returns res.json()
+      .then(async (data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          const randomPlayground =
+            data[Math.floor(Math.random() * data.length)];
+          const playgroundBorough = randomPlayground.borough;
 
-      // Use AllOrigins to fetch the HTML
-      const htmlResponse = await axios.get(
-        `https://api.allorigins.win/get?url=${encodeURIComponent(
-          randomPlayground.url
-        )}`
-      );
-      if (htmlResponse.data && htmlResponse.data.contents) {
-        const html = htmlResponse.data.contents;
-        const $ = cheerio.load(html);
+          console.log("Playground Data from NYC Parks API: ", randomPlayground);
 
-        // Extract the image
-        const imageUrl = $(".featured_src").attr("src");
-        // console.log(`Fetched Image URL: ${imageUrl}`);
+          const mappedPlayground = await scrapePlaygroundDetails(
+            randomPlayground
+          );
 
-        // Extract the description
-        const description = $("#park_description p").first().text();
-        // console.log(`Fetched Description: ${description}`);
-
-        const coordinates = randomPlayground.multipolygon.coordinates[0][0];
-        const [lon, lat] = coordinates[0];
-
-        const mappedPlayground = {
-          name: randomPlayground.name311,
-          displayAddress: randomPlayground.address || randomPlayground.location,
-          imageUrl: imageUrl || "https://via.placeholder.com/300", // TODO: consider an 'image' placeholder based on the playground slide emoji
-          parkUrl: randomPlayground.url || "https://www.nycgovparks.org/parks/",
-          description:
-            description ||
-            "Click the link below to the NYC Parks website to learn more.",
-          boroughName: boroughNames[playgroundBorough],
-          zipcode: randomPlayground.zipcode,
-          objectid: randomPlayground.objectid,
-          latitude: lat,
-          longitude: lon,
-        };
-
-        setPlayground(mappedPlayground);
-        console.log("Playground Data in Home: ", mappedPlayground); // Log the mapped playground data
-      } else {
-        throw new Error("Failed to fetch HTML content from AllOrigins");
-      }
-    } else {
-      if (criteria.borough && criteria.zipcode) {
-        setPopupMessage(popupMessages.noResultsCombination);
-      } else if (criteria.zipcode) {
-        setPopupMessage(popupMessages.noResultsZipcode);
-      }
-      setShowPopup(true);
-      // Update criteria to set Borough to 'Any' and clear zipcode
-      setCriteria({ borough: "Any", zipcode: "" });
-    }
+          setPlayground(mappedPlayground);
+          console.log("Playground Data in Home: ", mappedPlayground);
+        } else {
+          if (criteria.borough && criteria.zipcode) {
+            setPopupMessage(popupMessages.noResultsCombination);
+          } else if (criteria.zipcode) {
+            setPopupMessage(popupMessages.noResultsZipcode);
+          }
+          setShowPopup(true);
+          setCriteria({ borough: "Any", zipcode: "" });
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching playground data:", error);
+        setPopupMessage("An error occurred while fetching playground data.");
+        setShowPopup(true);
+        setCriteria({ borough: "Any", zipcode: "" });
+        setLoading(false);
+      });
   } catch (error) {
     console.error("Error fetching playground data:", error);
     setPopupMessage("An error occurred while fetching playground data.");
     setShowPopup(true);
-    // Update criteria to set Borough to 'Any' and clear zipcode
     setCriteria({ borough: "Any", zipcode: "" });
+    setLoading(false);
   }
-  setLoading(false);
+};
+
+const scrapePlaygroundDetails = async (playground) => {
+  try {
+    const htmlResponse = await axios.get(
+      `https://api.allorigins.win/get?url=${encodeURIComponent(playground.url)}`
+    );
+    if (htmlResponse.data && htmlResponse.data.contents) {
+      const html = htmlResponse.data.contents;
+      const $ = cheerio.load(html);
+
+      const imageUrl = $(".featured_src").attr("src");
+      const description = $("#park_description p").first().text();
+
+      const coordinates = playground.multipolygon.coordinates[0][0];
+      const [lon, lat] = coordinates[0];
+
+      return {
+        name: playground.name311,
+        displayAddress: playground.address || playground.location,
+        imageUrl: imageUrl || "https://via.placeholder.com/300",
+        parkUrl: playground.url || "https://www.nycgovparks.org/parks/",
+        description:
+          description ||
+          "Click the link below to the NYC Parks website to learn more.",
+        boroughName: boroughNames[playground.borough],
+        zipcode: playground.zipcode,
+        objectid: playground.objectid,
+        latitude: lat,
+        longitude: lon,
+      };
+    } else {
+      throw new Error("Failed to fetch HTML content from AllOrigins");
+    }
+  } catch (error) {
+    console.error("Error scraping playground details:", error);
+    throw error;
+  }
 };
 
 const getRandomBorough = () => {
