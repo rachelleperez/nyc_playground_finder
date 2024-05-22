@@ -12,12 +12,6 @@
 
 @media (max-width: 768px) {
   .app {
-    background-color: black;
-    color: #ffffff;
-    font-family: "Montserrat", sans-serif; /* Google Font */
     font-size: 14px; /* Smaller root size */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
   }
 }
