@@ -27,7 +27,7 @@ const About = () => {
 
         <section className="about__section">
           <h2 className="about__section-title">
-            How was NYC Playground Finder made?
+            How was the NYC Playground Finder made?
           </h2>
           <p className="about__section-description">
             The application was built using a tech stack primarily consisting of

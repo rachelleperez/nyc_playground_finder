@@ -1,8 +1,20 @@
 # NYC Playground Finder
 
-[NYC Parks Data](https://nycopendata.socrata.com/Recreation/Parks-Properties/enfh-gkve/about_data)
+## What is the NYC Playground Finder?
 
-# Getting Started with Create React App
+This tool is a web application designed to help users search for and discover playgrounds in New York City based on specific search criteria. It provides detailed information about each playground discovered, including weather data and an interactive map, enhancing the user experience by offering comprehensive insights into each playground.
+
+## How was the NYC Playground Finder made?
+
+The application was built using a tech stack primarily consisting of JavaScript and React, complemented by HTML and CSS for the frontend structure and styling. It leverages various external APIs, including the NYC Open Data API for playground data, the Open-Meteo API for weather information, and OpenStreetMap for map integration. The project is hosted on a GitHub repository (linked below).
+
+## Explore the Project
+
+To connect with the author, click [HERE](https://www.linkedin.com/in/rachelleperez/).
+
+# Learn more about Create React App
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
