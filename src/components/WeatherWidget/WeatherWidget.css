@@ -10,19 +10,19 @@
   margin-bottom: 40px;
 }
 
-.weather-widget-temp {
+.weather-widget__temp {
   font-size: 1.5rem;
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 5px;
 }
 
-.weather-widget-emoji {
+.weather-widget__emoji {
   font-size: 3rem;
   margin: 0 0 0 0;
 }
 
-.weather-widget-text {
+.weather-widget__text {
   margin-top: 5px;
   margin-bottom: 5px;
 }
