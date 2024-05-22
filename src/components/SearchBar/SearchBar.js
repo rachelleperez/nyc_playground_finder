@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./SearchBar.css";
 
 const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
@@ -32,6 +32,21 @@ const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
 
     fetchPlayground(criteria);
   };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Enter") {
+        handleSubmit(e);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    // remove the event listener
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [criteria]);
 
   return (
     <form onSubmit={handleSubmit} className="search-bar">
