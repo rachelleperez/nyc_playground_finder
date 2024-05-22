@@ -1,5 +1,3 @@
-import axios from "axios";
-
 export const fetchWeather = async (
   latitude,
   longitude,
@@ -8,21 +6,26 @@ export const fetchWeather = async (
   setError
 ) => {
   try {
-    // Fetch weather data using Open-Meteo API
-    const weatherResponse = await axios.get(
-      `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=precipitation_probability&timezone=auto`
-    );
-    const weatherData = weatherResponse.data;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=precipitation_probability&timezone=auto`;
 
-    console.log("Weather API response:", weatherData); // Log the overall weather data
+    fetch(url)
+      .then((response) => response.json())
+      .then((weatherData) => {
+        console.log("Weather API response:", weatherData);
 
-    setCurrentWeather(weatherData.current_weather);
+        setCurrentWeather(weatherData.current_weather);
 
-    // Extract the precipitation probability for the current hour or nearest hour
-    const currentHour = new Date(weatherData.current_weather.time).getHours();
-    const precipitationProb =
-      weatherData.hourly.precipitation_probability[currentHour];
-    setPrecipitationProbability(precipitationProb);
+        const currentHour = new Date(
+          weatherData.current_weather.time
+        ).getHours();
+        const precipitationProb =
+          weatherData.hourly.precipitation_probability[currentHour];
+        setPrecipitationProbability(precipitationProb);
+      })
+      .catch((err) => {
+        setError("Error fetching weather data");
+        console.error("Error fetching weather data:", err);
+      });
   } catch (err) {
     setError("Error fetching weather data");
     console.error("Error fetching weather data:", err);

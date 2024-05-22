@@ -30,7 +30,7 @@ export const fetchPlayground = async (
     console.log(`API Call: ${url}`);
 
     fetch(url)
-      .then((response) => response.json()) // First then() handler returns res.json()
+      .then((response) => response.json())
       .then(async (data) => {
         if (Array.isArray(data) && data.length > 0) {
           const randomPlayground =
