@@ -4,11 +4,28 @@
   gap: 10px;
 }
 
-.search-bar__select,
+.search-bar__select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search-bar__select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
 .search-bar__input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  outline: none;
+}
+
+.search-bar__input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .search-bar__button {
