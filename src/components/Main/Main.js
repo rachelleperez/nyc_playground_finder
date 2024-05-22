@@ -5,9 +5,9 @@ import "./Main.css";
 
 const Main = ({ children, currentPage }) => {
   return (
-    <div className="main-layout">
+    <div className="main">
       <Header currentPage={currentPage} />
-      <main className="main">{children}</main>
+      <main className="main__body">{children}</main>
       <Footer />
     </div>
   );

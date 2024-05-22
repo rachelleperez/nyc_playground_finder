@@ -1,10 +1,10 @@
-.main-layout {
+.main {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.main {
+.main__body {
   flex: 1;
   padding: 20px;
 }
