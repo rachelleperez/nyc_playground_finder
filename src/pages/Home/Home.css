@@ -1,4 +1,6 @@
-.home-page {
+/* Home Page Styles */
+
+.home {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,34 +8,34 @@
   text-align: center;
 }
 
-.home-page h1 {
+.home__title {
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
 
-.home-page h2 {
+.home__search-title {
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
-.home-page p {
+.home__description,
+.home__search-description {
   margin-bottom: 10px;
-  text-align: center;
 }
 
-.search-filter {
+.home__search-filter {
   display: flex;
   align-items: center;
   width: 80%;
   gap: 50px;
 }
 
-.search-filter > * {
+.home__search-filter > * {
   flex: 1;
-  box-sizing: border-box; /* Ensures padding is included in the element's total width */
+  box-sizing: border-box;
 }
 
-.home-page-button {
+.home__button {
   background-color: #007bff;
   color: white;
   border: none;
@@ -43,43 +45,34 @@
   margin-top: 10px;
 }
 
-.home-page button:hover {
+.home__button:hover {
   background-color: #0056b3;
 }
 
-.home-page .subtitle {
+.home__subtitle {
   font-size: 1.2rem;
   margin-top: 0;
   margin-bottom: 10px;
-  text-align: center;
-  font-weight: normal; /* To Remove bold */
+  font-weight: normal;
   font-style: italic;
 }
 
-/* Center the search result */
-.search-result {
+.home__search-result {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   width: 50%;
   margin-top: 20px;
 }
 
-.search-result h3 {
+.home__result-title {
   font-size: 1.8rem;
   margin-bottom: 20px;
-  text-align: center;
 }
 
-.search-result .home-page-button {
-  margin-top: 10px;
-}
-
-/* Update needed to look good in smaller screens */
 @media (max-width: 768px) {
-  .search-filter {
+  .home__search-filter {
     flex-direction: column;
     gap: 20px;
   }
