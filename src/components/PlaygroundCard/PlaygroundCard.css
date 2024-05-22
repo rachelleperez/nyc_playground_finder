@@ -10,26 +10,20 @@
   text-align: center;
 }
 
-.playground-card img {
+.playground-card__image {
   max-width: 100%;
   height: auto;
   border-radius: 5px;
 }
 
-.playground-card h3 {
+.playground-card__title {
   margin-top: 0;
 }
 
-.playground-card button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
+.playground-card__address {
   margin-top: 10px;
 }
 
-.playground-card button:hover {
-  background-color: #0056b3;
+.playground-card__location {
+  margin-top: 10px;
 }

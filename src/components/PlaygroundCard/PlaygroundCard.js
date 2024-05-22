@@ -5,17 +5,18 @@ const PlaygroundCard = ({ playground }) => {
 
   return (
     <div className="playground-card">
-      <h2>{name}</h2>
+      <h2 className="playground-card__title">{name}</h2>
       <img
+        className="playground-card__image"
         src={imageUrl}
         alt={name}
         onError={(e) => {
-          e.target.onerror = null; // Prevent infinite loop if placeholder fails
+          e.target.onerror = null;
           e.target.src = "https://via.placeholder.com/300";
         }}
       />
-      <p>{displayAddress}</p>
-      <p>
+      <p className="playground-card__address">{displayAddress}</p>
+      <p className="playground-card__location">
         {boroughName}, NY {zipcode}
       </p>
     </div>
