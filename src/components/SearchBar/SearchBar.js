@@ -18,7 +18,7 @@ const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
 
     setCriteria((prev) => ({
       ...prev,
-      [name]: value === "Any" ? null : value, // if "Any", make the value null
+      [name]: value === "Any" ? null : value,
     }));
   };
 
@@ -35,11 +35,12 @@ const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
 
   return (
     <form onSubmit={handleSubmit} className="search-bar">
-      <p>Select a Borough (or choose "All")</p>
+      <p className="search-bar__label">Select a Borough (or choose "All")</p>
       <select
         name="borough"
         value={criteria.borough || ""}
         onChange={handleInputChange}
+        className="search-bar__select"
       >
         <option value="Any">All</option>
         <option value="Manhattan">Manhattan</option>
@@ -48,12 +49,12 @@ const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
         <option value="Bronx">Bronx</option>
         <option value="Staten Island">Staten Island</option>
       </select>
-      <p>Enter a 5-digit Zip Code</p>
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <p className="search-bar__label">Enter a 5-digit Zip Code</p>
+      <div className="search-bar__input-wrapper">
         <img
           src="/images/Search.svg"
           alt="Search Icon"
-          style={{ marginRight: "8px" }}
+          className="search-bar__icon"
         />
         <input
           type="text"
@@ -61,10 +62,13 @@ const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
           placeholder="Zipcode"
           value={criteria.zipcode || ""}
           onChange={handleInputChange}
+          className="search-bar__input"
         />
       </div>
-      {zipError && <p style={{ color: "red" }}>{zipError}</p>}
-      <button type="submit">Search by Location</button>
+      {zipError && <p className="search-bar__error">{zipError}</p>}
+      <button type="submit" className="search-bar__button">
+        Search by Location
+      </button>
     </form>
   );
 };
