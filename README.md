@@ -6,7 +6,7 @@ This tool is a web application designed to help users search for and discover pl
 
 ## How was the NYC Playground Finder made?
 
-The application was built using a tech stack primarily consisting of JavaScript and React, complemented by HTML and CSS for the frontend structure and styling. It leverages various external APIs, including the NYC Open Data API for playground data, the Open-Meteo API for weather information, and OpenStreetMap for map integration. The project is hosted on a GitHub repository (linked below).
+The application was built using a tech stack primarily consisting of JavaScript and React, complemented by HTML and CSS for the frontend structure and styling. It leverages various external APIs, including the [NYC Open Data API](https://nycopendata.socrata.com/Recreation/Parks-Properties/enfh-gkve/about_data) for playground data, the [Open-Meteo API](https://open-meteo.com/en/docs) for weather information, and OpenStreetMap for map integration. The project is hosted on a GitHub repository (linked below).
 
 ## Explore the Project
 
