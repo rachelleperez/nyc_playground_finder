@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./SearchBar.css";
 
 const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
@@ -22,16 +22,19 @@ const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
 
-    if (criteria.zipcode && criteria.zipcode.length !== 5) {
-      setZipError("ZIP code must be exactly 5 digits.");
-      return;
-    }
+      if (criteria.zipcode && criteria.zipcode.length !== 5) {
+        setZipError("ZIP code must be exactly 5 digits.");
+        return;
+      }
 
-    fetchPlayground(criteria);
-  };
+      fetchPlayground(criteria);
+    },
+    [criteria, fetchPlayground]
+  );
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -46,7 +49,7 @@ const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [criteria]);
+  }, [handleSubmit]);
 
   return (
     <form onSubmit={handleSubmit} className="search-bar">

@@ -1,11 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import Main from "../../components/Main/Main";
 import "./About.css";
 
 const About = () => {
-  const navigate = useNavigate();
-
   return (
     <Main currentPage="About">
       <div className="about">

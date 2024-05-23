@@ -26,7 +26,7 @@ const Map = ({ latitude, longitude, name }) => {
     return () => {
       map.remove();
     };
-  }, [latitude, longitude]);
+  }, [latitude, longitude, name]);
 
   return <div id="map" className="map"></div>;
 };

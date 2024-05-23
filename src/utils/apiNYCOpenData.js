@@ -35,7 +35,6 @@ export const fetchPlayground = async (
         if (Array.isArray(data) && data.length > 0) {
           const randomPlayground =
             data[Math.floor(Math.random() * data.length)];
-          const playgroundBorough = randomPlayground.borough;
 
           console.log("Playground Data from NYC Parks API: ", randomPlayground);
 
