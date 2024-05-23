@@ -26,7 +26,7 @@ const Popup = ({ message, onClose }) => {
     <div className="popup" onClick={handleOverlayClick}>
       <div className="popup__content">
         <img
-          src="/images/Cross.svg"
+          src={`${process.env.PUBLIC_URL}/images/Cross.svg`}
           alt="Close"
           className="popup__close-button"
           onClick={onClose}

@@ -70,7 +70,7 @@ const SearchBar = ({ criteria, setCriteria, fetchPlayground }) => {
       <p className="search-bar__label">Enter a 5-digit Zip Code</p>
       <div className="search-bar__input-wrapper">
         <img
-          src="/images/Search.svg"
+          src={`${process.env.PUBLIC_URL}/images/Search.svg`}
           alt="Search Icon"
           className="search-bar__icon"
         />
