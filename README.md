@@ -10,7 +10,7 @@ The application was built using a tech stack primarily consisting of JavaScript 
 
 ## Explore the Project
 
-To **visit** this project, click [HERE](https://rachelleperez.github.io/nyc_playground_finder/)
+To **visit** this project, click [HERE](https://rachelleperez.github.io/nyc_playground_finder/).
 
 To **connect** with the author, click [HERE](https://www.linkedin.com/in/rachelleperez/).
 
